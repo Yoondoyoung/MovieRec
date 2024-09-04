@@ -1,10 +1,11 @@
 <?php
-$key = "f0c00ade59eb5d068135420171d66658";
-$token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMGMwMGFkZTU5ZWI1ZDA2ODEzNTQyMDE3MWQ2NjY1OCIsIm5iZiI6MTcyNDM4MDI4OC40NzAwOTksInN1YiI6IjY2YzdmMzVlOTg1YjIxNTRhZWIyZjg5NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.foYdyebICe92TL7jQz5A18sRvSDIuw5yOTWVoLQ4bog";
+include 'apiKey.php';
+$apiKey = getenv('API_KEY');
+$token = getenv('TOKEN');
 
 function getMovieList($searchQuery = null, $pageNumber = 1)
 {
-    global $key;
+    global $apiKey;
     global $token;
     $curl = curl_init();
 
